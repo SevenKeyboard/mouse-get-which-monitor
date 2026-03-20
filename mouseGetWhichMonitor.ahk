@@ -13,7 +13,7 @@ class VersionManager_mouseGetWhichMonitor
     static _ := VersionManager_mouseGetWhichMonitor._init()
     _init()    {
         global
-        MOUSEGETWHICHMONITOR_VERSION := "1.0.0"
+        MOUSEGETWHICHMONITOR_VERSION := "1.0.1"
         if (!this._verCheck(MONITOREXGETUTILS_VERSION , "1.0.0"))
             throw exception("MonitorExGetUtils version 1.x is required (minimum 1.0.0).")
         return true
@@ -30,13 +30,13 @@ class VersionManager_mouseGetWhichMonitor
 }
 mouseGetWhichMonitor(x:="", y:="")    {
     if (x=="" || y=="")    {
-        varSetCapacity(POINT, 8, 0)
-        if (!dllCall("User32.dll\GetCursorPos", "Ptr",&POINT))
+        varSetCapacity(point, 8, 0)
+        if (!dllCall("User32.dll\GetCursorPos", "Ptr",&point))
             return 0
-        x:=numGet(POINT,0,"Int"), y:=numGet(POINT,4,"Int")
+        x:=numGet(point,0,"Int"), y:=numGet(point,4,"Int")
     }
     for N,info in monitorExGetInfoList()    {
-        if (info.rcMonitor.left<=x && x<=info.rcMonitor.right && info.rcMonitor.top<=y && y<=info.rcMonitor.bottom)
+        if (info.rcMonitor.left<=x && x<info.rcMonitor.right && info.rcMonitor.top<=y && y<info.rcMonitor.bottom)
             return N
     }
     return 0
