@@ -35,9 +35,9 @@ mouseGetWhichMonitor(x:="", y:="")    {
             return 0
         x:=numGet(point,0,"Int"), y:=numGet(point,4,"Int")
     }
-    for N,info in monitorExGetInfoList()    {
+    for n,info in monitorExGetInfoList()    {
         if (info.rcMonitor.left<=x && x<info.rcMonitor.right && info.rcMonitor.top<=y && y<info.rcMonitor.bottom)
-            return N
+            return n
     }
     return 0
 }
