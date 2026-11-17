@@ -8,7 +8,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsAotCompatible>true</IsAotCompatible>
     <MonitorExGetUtilsProjectPath Condition="'$(MonitorExGetUtilsProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../monitor-ex-get-utils/main-cs/src/SevenKeyboard.MonitorExGetUtils/SevenKeyboard.MonitorExGetUtils.csproj</MonitorExGetUtilsProjectPath>
-    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../../../library-build/main-cs/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
+    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../build/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="$(MonitorExGetUtilsProjectPath)" MinimumVersion="2.0.0" />

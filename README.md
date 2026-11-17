@@ -28,14 +28,14 @@ Version 1.0.1 is preserved: nullable typed inputs retain the source contract.
 
 ## Dependencies
 
-The project references the external sibling `monitor-ex-get-utils/main-cs`
-project and imports `library-build/main-cs/CheckLibraryVersions.targets`.
-The build requires MonitorExGetUtils **2.x**, minimum **2.0.0**.
-No dependency source is included.
+Use the sibling `monitor-ex-get-utils/main-cs` project and its
+`display-monitor-info-manager/main-cs` dependency (2.x, at least 2.0.0).
+Keep all checkouts under a common parent in `<repo>/main-cs`. The bundled
+`build/CheckLibraryVersions.targets` checks for MonitorExGetUtils **2.x**,
+at least **2.0.0**.
 
-For another checkout layout, set MSBuild properties
-`MonitorExGetUtilsProjectPath` and `LibraryBuildTargetsPath`; the dependency
-also accepts `DisplayMonitorInfoManagerProjectPath`.
+For another checkout layout, set `MonitorExGetUtilsProjectPath` and, if
+needed, `DisplayMonitorInfoManagerProjectPath`.
 
 See [build and test instructions](tests/README.md).
 
